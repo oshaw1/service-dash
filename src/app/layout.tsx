@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Link from "next/link";
-import { Activity, Home, History, Plus, Settings } from "lucide-react";
 import "./globals.css";
+import { Activity, Home, Plus, Settings } from "lucide-react";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Service Monitor Dashboard",
+  title: "Service-dash",
   description: "Monitor your network services and their status",
 };
 
@@ -25,48 +25,46 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head></head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="bg-white shadow">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between h-16 items-center">
-              <div className="flex items-center">
-                <Activity className="h-8 w-8 text-blue-600" />
-                <h1 className="ml-2 text-xl font-bold">Service-dash</h1>
-              </div>
-              <nav className="flex space-x-4">
-                <Link 
-                  href="/" 
-                  className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100"
+        <div className="flex min-h-screen  flex-col md:flex-row">
+          {/* Sidebar */}
+          <aside className="w-full md:w-40 bg-card border-r border-border flex flex-col">
+            <div className="flex items-center justify-center">
+              <img src="/images/logo.svg" alt="Logo" className=" h-14 w-14" />
+            </div>
+            <div className="p-2 flex justify-center">
+              <h1 className="ml-2 text-lg font-bold">Service-dash</h1>
+            </div>
+            <nav className="flex flex-col flex-grow px-2 py-4">
+              <div>
+                <Link
+                  href="/"
+                  className="flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
                 >
                   <Home className="mr-2 h-4 w-4" />
                   Dashboard
                 </Link>
-                <Link 
-                  href="/" 
-                  className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-100"
+              </div>
+              <div className="mt-auto">
+                <Link
+                  href="/settings"
+                  className="flex items-center justify-center rounded-md px-3 py-2 text-sm font-medium hover:bg-accent hover:text-accent-foreground"
                 >
                   <Settings className="mr-2 h-4 w-4" />
                   Settings
                 </Link>
-              </nav>
-            </div>
-          </div>
-        </header>
-        <main className="flex-1 py-6">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {children}
-          </div>
-        </main>
-        <footer className="bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="py-4 text-center text-sm text-gray-500">
-              &copy; {new Date().getFullYear()} Service Monitor
-            </div>
-          </div>
-        </footer>
+              </div>
+            </nav>
+          </aside>
+          {/* Main content */}
+          <main className="flex-1">
+            <div className="p-4 sm:p-6 md:p-8">{children}</div>
+          </main>
+        </div>
       </body>
     </html>
   );

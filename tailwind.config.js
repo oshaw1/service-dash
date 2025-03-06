@@ -7,72 +7,80 @@ module.exports = {
       './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     ],
     theme: {
+      container: {
+        center: true,
+        padding: "2rem",
+        screens: {
+          "2xl": "1400px",
+        },
+      },
       extend: {
         colors: {
-          border: "hsl(var(--border))",
-          input: "hsl(var(--input))",
-          ring: "hsl(var(--ring))",
-          background: "hsl(var(--background))",
-          foreground: "hsl(var(--foreground))",
+          border: "#e2e8f0",
+          input: "#e2e8f0",
+          ring: "#3b82f6",
+          background: "#ffffff",
+          foreground: "#0f172a",
           primary: {
-            DEFAULT: "hsl(var(--primary))",
-            foreground: "hsl(var(--primary-foreground))",
+            DEFAULT: "#3b82f6",
+            foreground: "#ffffff",
           },
           secondary: {
-            DEFAULT: "hsl(var(--secondary))",
-            foreground: "hsl(var(--secondary-foreground))",
+            DEFAULT: "#f1f5f9",
+            foreground: "#1e293b",
           },
           destructive: {
-            DEFAULT: "hsl(var(--destructive))",
-            foreground: "hsl(var(--destructive-foreground))",
+            DEFAULT: "#ef4444",
+            foreground: "#ffffff",
           },
           muted: {
-            DEFAULT: "hsl(var(--muted))",
-            foreground: "hsl(var(--muted-foreground))",
+            DEFAULT: "#f1f5f9",
+            foreground: "#64748b",
           },
           accent: {
-            DEFAULT: "hsl(var(--accent))",
-            foreground: "hsl(var(--accent-foreground))",
-          },
-          popover: {
-            DEFAULT: "hsl(var(--popover))",
-            foreground: "hsl(var(--popover-foreground))",
+            DEFAULT: "#6366f1", // A shade of indigo
+            foreground: "#ffffff", // White text color for contrast
           },
           card: {
-            DEFAULT: "hsl(var(--card))",
-            foreground: "hsl(var(--card-foreground))",
+            DEFAULT: "#ffffff",
+            foreground: "#0f172a",
           },
-          success: {
-            DEFAULT: "hsl(var(--success))",
-            foreground: "hsl(var(--success-foreground))",
-          },
-          warning: {
-            DEFAULT: "hsl(var(--warning))",
-            foreground: "hsl(var(--warning-foreground))",
-          },
-          error: {
-            DEFAULT: "hsl(var(--error))",
-            foreground: "hsl(var(--error-foreground))",
-          },
+          dark: {
+            border: "#374151",
+            input: "#374151",
+            ring: "#4f46e5",
+            background: "#0f172a",
+            foreground: "#f1f5f9",
+            primary: {
+              DEFAULT: "#4f46e5",
+              foreground: "#f1f5f9",
+            },
+            secondary: {
+              DEFAULT: "#1e293b",
+              foreground: "#f1f5f9",
+            },
+            destructive: {
+              DEFAULT: "#b91c1c",
+              foreground: "#f1f5f9",
+            },
+            muted: {
+              DEFAULT: "#1e293b",
+              foreground: "#94a3b8",
+            },
+            accent: {
+                DEFAULT: "#6366f1", // A shade of indigo
+                foreground: "#ffffff", // White text color for contrast
+            },
+            card: {
+              DEFAULT: "#1e293b",
+              foreground: "#f1f5f9",
+            },
+          }
         },
         borderRadius: {
-          lg: "var(--radius)",
-          md: "calc(var(--radius) - 2px)",
-          sm: "calc(var(--radius) - 4px)",
-        },
-        keyframes: {
-          "accordion-down": {
-            from: { height: 0 },
-            to: { height: "var(--radix-accordion-content-height)" },
-          },
-          "accordion-up": {
-            from: { height: "var(--radix-accordion-content-height)" },
-            to: { height: 0 },
-          },
-        },
-        animation: {
-          "accordion-down": "accordion-down 0.2s ease-out",
-          "accordion-up": "accordion-up 0.2s ease-out",
+          lg: "0.5rem",
+          md: "calc(0.5rem - 2px)",
+          sm: "calc(0.5rem - 4px)",
         },
       },
     },
