@@ -1,88 +1,90 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    darkMode: ["class"],
-    content: [
-      './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-      './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-      './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    ],
-    theme: {
-      container: {
-        center: true,
-        padding: "2rem",
-        screens: {
-          "2xl": "1400px",
+  content: [
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        
+        neutral: {
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#e5e5e5',
+          300: '#d4d4d4',
+          400: '#a3a3a3',
+          500: '#737373',
+          600: '#525252',
+          700: '#404040',
+          800: '#262626',
+          900: '#171717',
+          950: '#0a0a0a',
         },
-      },
-      extend: {
-        colors: {
-          border: "#e2e8f0",
-          input: "#e2e8f0",
-          ring: "#3b82f6",
-          background: "#ffffff",
-          foreground: "#0f172a",
-          primary: {
-            DEFAULT: "#3b82f6",
-            foreground: "#ffffff",
-          },
-          secondary: {
-            DEFAULT: "#f1f5f9",
-            foreground: "#1e293b",
-          },
-          destructive: {
-            DEFAULT: "#ef4444",
-            foreground: "#ffffff",
-          },
-          muted: {
-            DEFAULT: "#f1f5f9",
-            foreground: "#64748b",
-          },
-          accent: {
-            DEFAULT: "#6366f1", // A shade of indigo
-            foreground: "#ffffff", // White text color for contrast
-          },
-          card: {
-            DEFAULT: "#ffffff",
-            foreground: "#0f172a",
-          },
-          dark: {
-            border: "#374151",
-            input: "#374151",
-            ring: "#4f46e5",
-            background: "#0f172a",
-            foreground: "#f1f5f9",
-            primary: {
-              DEFAULT: "#4f46e5",
-              foreground: "#f1f5f9",
-            },
-            secondary: {
-              DEFAULT: "#1e293b",
-              foreground: "#f1f5f9",
-            },
-            destructive: {
-              DEFAULT: "#b91c1c",
-              foreground: "#f1f5f9",
-            },
-            muted: {
-              DEFAULT: "#1e293b",
-              foreground: "#94a3b8",
-            },
-            accent: {
-                DEFAULT: "#6366f1", // A shade of indigo
-                foreground: "#ffffff", // White text color for contrast
-            },
-            card: {
-              DEFAULT: "#1e293b",
-              foreground: "#f1f5f9",
-            },
-          }
+        
+        blue: {
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
         },
-        borderRadius: {
-          lg: "0.5rem",
-          md: "calc(0.5rem - 2px)",
-          sm: "calc(0.5rem - 4px)",
+        
+        red: {
+          50: '#fef2f2',
+          100: '#fee2e2',
+          200: '#fecaca',
+          300: '#fca5a5',
+          400: '#f87171',
+          500: '#ef4444',
+          600: '#dc2626',
+          700: '#b91c1c',
+          800: '#991b1b',
+          900: '#7f1d1d',
         },
-      },
+        
+        green: {
+          50: '#f0fdf4',
+          100: '#dcfce7',
+          200: '#bbf7d0',
+          300: '#86efac',
+          400: '#4ade80',
+          500: '#22c55e',
+          600: '#16a34a',
+          700: '#15803d',
+          800: '#166534',
+          900: '#14532d',
+        },
+        
+        amber: {
+          50: '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          400: '#fbbf24',
+          500: '#f59e0b',
+          600: '#d97706',
+          700: '#b45309',
+          800: '#92400e',
+          900: '#78350f',
+        },
+        
+        // Status colors for monitoring application
+        status: {
+          up: green-500,      
+          down: red-500,    
+          degraded: amber-500,
+          unknown: neutral-500  
+        }
+      }
     },
-    plugins: [require("tailwindcss-animate")],
-  }
+  },
+  plugins: [require("tailwindcss-animate")],
+}

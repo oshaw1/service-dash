@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { Button } from "@/components/ui/Button";
 import { RefreshCw, Plus } from "lucide-react";
-import Link from "next/link";
 import useSWR from "swr";
 import { Service, StatusData } from "@/lib/types";
 
@@ -80,12 +79,12 @@ export default function DashboardPage() {
 
   return (
     <>
-      <div className="flex justify-between items-center justify-end mb-6">
+      <div className="flex items-center justify-end mb-6">
         <div className="flex gap-2">
           <Button
             onClick={checkAllStatuses}
-            disabled={isRefreshing || !services?.length}
-            variant="outline"
+            variant="secondary"
+            disabled={isRefreshing}
             className="flex items-center"
           >
             <RefreshCw
