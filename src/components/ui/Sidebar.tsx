@@ -19,7 +19,7 @@ export default function Sidebar() {
         {!collapsed && <h1 className="mt-2 text-lg font-bold text-center p-2">Service-dash</h1>}
       </div>
       
-      <nav className="flex flex-col flex-grow px-1 py-4 space-y-2">
+      <nav className="flex flex-col flex-grow px-1 space-y-2">
         <div>
           <Button
             variant="nav"
@@ -31,7 +31,6 @@ export default function Sidebar() {
           </Button>
         </div>
         <div className="mt-auto flex flex-col space-y-2">
-          {/* Collapse button above settings */}
           <div className="flex justify-center">
             <Button 
               variant="ghost" 
